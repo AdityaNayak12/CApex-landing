@@ -42,7 +42,7 @@ export default function WaitlistForm() {
         </div>
         <div className="form-field">
           <label htmlFor="phone">Phone number</label>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" required aria-describedby="phone-error" aria-invalid={state.errors?.getFieldErrors("phone").length ? true : undefined} />
+          <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="9999999999" required aria-describedby="phone-error" aria-invalid={state.errors?.getFieldErrors("phone").length ? true : undefined} />
           <ValidationError id="phone-error" role="alert" prefix="Phone number" field="phone" errors={state.errors} className="form-error" />
         </div>
         <div className="form-field">
