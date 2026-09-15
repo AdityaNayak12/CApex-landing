@@ -1,15 +1,141 @@
-const workspace = process.env.NEXT_PUBLIC_APP_URL || "#demo";
+import Image from "next/image";
+import WaitlistForm from "../components/WaitlistForm";
+
+const steps = [
+  ["01", "Import", "Bring in a Tally XML/XLSX export and keep the source batch intact."],
+  ["02", "Check", "Run explainable statutory checks across balances, movement, and continuity."],
+  ["03", "Review", "Work through a focused queue that keeps each exception in context."],
+  ["04", "Document", "Add your notes and preserve the decision trail for the file."],
+];
+
+const capabilities = [
+  "Trace every transaction, not only a sample",
+  "Rank exceptions by risk and money",
+  "Prepare SA-mapped working papers for pilot review",
+];
 
 export default function Page() {
-  return <main className="supply">
-    <section className="supply-hero"><div className="supply-mark" aria-hidden="true">✺</div><p className="supply-brand">CApex</p><h1>The audit workspace<br />Chartered Accountants choose.</h1><p>CApex turns Tally data into materiality-aware, audit-ready exceptions—without taking the reviewer out of the loop.</p><div className="supply-actions"><a href={workspace}>Open workspace <b>↗</b></a><a href="#workflow">How it works <b>↓</b></a></div><div className="signal-field" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div></section>
-    <section className="intro" id="workflow"><p>From raw ledger to reviewed exception.</p><h2>Clear scrutiny.<br />Confident review.</h2><div className="audit-screen"><aside><b>CApex</b><span>WORKSPACE</span><strong>Meridian Manufacturing</strong><a>Findings <i>5</i></a><a>Review queue</a><a>Import batches</a></aside><article><small>SCRUTINY RUN #042</small><h3>Exception review</h3><div className="screen-finding"><em>HIGH</em><b>Gross margin movement</b><p>Gross margin moved <strong>17.3 pp</strong> against the policy threshold.</p><footer>₹ 1.84 Cr variance <span>Review required →</span></footer></div><div className="screen-row"><span>Suspense account balance <b>₹ 4.20 L</b></span><span>Opening balance continuity <b>3 ledgers</b></span></div></article></div></section>
-    <section className="benefits"><p>Built for a better audit workflow.</p><h2>Focused clarity.</h2><div><article><i>✦</i><h3>Deterministic checks</h3><p>Visible rules and thresholds make every exception explainable.</p></article><article><i>✳</i><h3>Auditor control</h3><p>Review, resolve, and document the decision in the same workspace.</p></article><article><i>✺</i><h3>Period context</h3><p>Surface material movements using prior-period comparison.</p></article></div></section>
-    <blockquote>“The goal is not another black box. It is a quieter, more defensible audit review.”<footer>CApex <span>— built for modern audit teams</span></footer></blockquote>
-    <section className="packs"><p>One clean workspace.</p><h2>Built around the audit.</h2><div className="pack-grid"><article><small>01 — IMPORT</small><h3>Start with the ledger.</h3><p>Bring in Tally XML/XLSX data and preserve the original import batch.</p><ul><li>Immutable source batches</li><li>Consistent ledger model</li><li>Clear import history</li></ul></article><article><small>02 — SCRUTINIZE</small><h3>Find material exceptions.</h3><p>Apply explainable checks to period movement, balances, and manufacturing accounts.</p><ul><li>Visible policy thresholds</li><li>Multi-period comparison</li><li>Focused sector pack</li></ul><a href={workspace}>Open live demo <b>↗</b></a></article></div></section>
-    <section className="manufacturing-mini" id="demo"><p>Manufacturing v1.</p><h2>More signal, less<br />ledger noise.</h2><div><article><small>SECTOR SUGGESTION</small><h3>Manufacturing</h3><p>GST-guided suggestion, confirmed by the auditor.</p><span>✓ Raw material movement</span><span>✓ Work-in-progress movement</span><span>✓ Finished-goods movement</span></article><article><small>POLICY</small><h3>Set the boundary.</h3><p><b>1%</b> of COGS<br />inventory tolerance</p><p><b>10 pp</b><br />gross-margin movement</p></article></div></section>
-    <blockquote className="quote-light">“Every exception should show its work—and every review should leave an evidence trail.”<footer>CApex <span>— audit scrutiny workspace</span></footer></blockquote>
-    <section className="faq"><p>Questions.</p><h2>Answered.</h2>{[["What does CApex do?", "CApex automates the tedious, mechanical part of ledger scrutiny before an audit begins. Upload a client's trial balance and it runs deterministic checks, correct debit/credit classification, balance sheet continuity across years, physical-impossibility checks like negative cash, unresolved suspense balances, and surfaces every exception in one reviewable queue instead of a CA manually scanning the whole trial balance line by line."], ["Does it replace audit judgement?", "No. CApex flags what needs a human's attention, it never decides whether something is actually wrong. Every finding sits in a review queue where the auditor investigates, clears it, or flags it for follow-up with their own notes attached. The judgement stays entirely with the CA; CApex just makes sure nothing gets missed in a wall of numbers."], ["Which Tally exports can I use?", "A Trial Balance or Day Book export in XML format, from Gateway of Tally → Display More Reports → Trial Balance → Alt+E → export as XML. We also support a standard trial balance spreadsheet (XLSX) for clients on other systems."], ["Can I retain my review notes?", "Yes. Every exception's status and your notes persist even if you re-run scrutiny after correcting the underlying data; nothing you've already reviewed gets wiped or has to be redone."], ["Does CApex handle GST or TDS reconciliation?", "Not in the current version. Today's scope is trial balance scrutiny, correct classification, continuity, and balance integrity. GST/TDS portal reconciliation and vouching are on the roadmap as the next layer."]].map(([question, answer]) => <details key={question}><summary>{question}<b>+</b></summary><p>{answer}</p></details>)}</section>
-    <footer className="supply-footer"><b><span>CA</span>pex</b><p>Built for modern audit teams.</p><a href={workspace}>Open live workspace ↗</a></footer>
-  </main>;
+  return (
+    <main className="site-shell">
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="CApex home">
+          <Image src="/capex-logo-light.png" alt="CApex" width={42} height={41} priority />
+          <span>CAPEX</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#how-it-works">How it works</a>
+          <a href="#principles">Our principle</a>
+          <a href="#waitlist">Pilot</a>
+        </nav>
+        <a className="header-link" href="#waitlist">Join the waitlist <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <section className="hero" id="top" aria-labelledby="hero-title">
+        <div className="hero-media" aria-hidden="true">
+          <Image
+            className="hero-image"
+            src="/mountain-hero.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="hero-copy">
+          <h1 id="hero-title">CAPEX</h1>
+          <p className="hero-tagline">The AI audit engine for Indian CA firms.</p>
+        </div>
+      </section>
+
+      <div className="paired-sections section-wrap">
+      <section className="overview" aria-labelledby="overview-title">
+        <div className="overview-panel overview-lead">
+          <p className="eyebrow">For Chartered Accountants <span>•</span> In active development</p>
+          <h2 id="overview-title">A clearer way to scrutinise the <em>ledger.</em></h2>
+        </div>
+        <div className="overview-panel overview-detail">
+          <p className="overview-copy">In active development, CApex is being tested with Tally XML/XLSX exports to trace every transaction - not a sample into a ranked, explainable review queue. Surface unusual entries, negative balances, and suspense movement while your judgement stays with the work that matters.</p>
+          <p className="hero-note"><span className="status-dot" /> Statutory check engine live in testing</p>
+          <div className="hero-actions">
+            <a className="button button-accent" href="#waitlist">Join the pilot waitlist <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div className="review-preview" aria-label="Illustrative pilot review queue">
+          <div className="review-preview-top"><span>CApex / pilot view</span><span>ILLUSTRATIVE</span></div>
+          <p>From ledger noise<br />to a focused review.</p>
+          <div className="review-preview-row"><span>01</span><strong>Mismatches</strong><span>Review</span></div>
+          <div className="review-preview-row"><span>02</span><strong>Duplicates</strong><span>Review</span></div>
+          <div className="review-preview-row"><span>03</span><strong>Backdated entries</strong><span>Review</span></div>
+          <div className="review-preview-bottom"><span>Checks surface exceptions</span><span>CA decides ↗</span></div>
+        </div>
+      </section>
+
+      <section className="process" id="how-it-works" aria-labelledby="process-title">
+        <div className="section-heading">
+          <p className="eyebrow">The workflow</p>
+          <h2 id="process-title">Make the first pass<br /><em>more deliberate.</em></h2>
+          <p>The statutory check engine is live in testing. Wider pilot capabilities are being validated to reduce the mechanical scan before review begins, with every step visible, traceable, and ready for a CA to assess.</p>
+        </div>
+        <div className="step-grid">
+          {steps.map(([number, title, copy]) => (
+            <article className="step" key={number}>
+              <span className="step-number">{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+        <div className="capability-panel">
+          <div>
+            <p className="eyebrow">What we are building</p>
+            <h3>A calmer review surface<br />for complex accounts.</h3>
+          </div>
+          <ul>
+            {capabilities.map((capability) => <li key={capability}><span aria-hidden="true">+</span>{capability}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      </div>
+
+      <section className="principle" id="principles" aria-labelledby="principle-title">
+        <div className="principle-engine">
+          <article className="engine-card" aria-label="CApex statutory check engine status">
+            <div className="card-top">
+              <span>STATUTORY CHECK ENGINE</span>
+              <span className="card-tag">TESTING</span>
+            </div>
+            <h3 className="card-title">From raw data<br />to reviewable signal.</h3>
+            <div className="card-rule"><span>01</span><span>Balance continuity</span><b>Ready</b></div>
+            <div className="card-rule"><span>02</span><span>Material movement</span><b>Ready</b></div>
+            <div className="card-rule"><span>03</span><span>Exception context</span><b>Ready</b></div>
+            <div className="card-foot"><span>CApex / pilot build</span><span>→</span></div>
+          </article>
+        </div>
+        <div className="principle-copy-block">
+          <p className="eyebrow">The responsibility statement</p>
+          <h2 id="principle-title">The tool flags.<br /><em>The CA decides.</em></h2>
+          <p className="principle-copy">Capex is being built to surface patterns, exceptions, and missing context. It does not replace professional judgement, sign-off, or the responsibility of the Chartered Accountant.</p>
+        </div>
+      </section>
+
+      <section className="waitlist section-wrap" id="waitlist" aria-labelledby="waitlist-title">
+        <div className="waitlist-copy">
+          <p className="eyebrow">Pilot programme <span>•</span> November 2026</p>
+          <h2 id="waitlist-title">Help shape the<br /><em>review layer.</em></h2>
+          <p>We are preparing a small group of CA practices for pilots beginning November 2026. Leave your details and we will share the pilot scope as it takes shape.</p>
+          <p className="waitlist-status"><span className="status-dot" /> Currently in active development</p>
+        </div>
+        <WaitlistForm />
+      </section>
+
+      <footer className="site-footer">
+        <a className="brand" href="#top" aria-label="CApex home">
+          <Image src="/capex-logo-light.png" alt="" width={34} height={33} />
+          <span>CAPEX</span>
+        </a>
+        <p>Built for modern audit teams.</p>
+      </footer>
+    </main>
+  );
 }
