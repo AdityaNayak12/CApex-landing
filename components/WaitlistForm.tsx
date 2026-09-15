@@ -37,12 +37,12 @@ export default function WaitlistForm() {
         </div>
         <div className="form-field">
           <label htmlFor="email">E-mail</label>
-          <input id="email" name="email" type="email" autoComplete="email" placeholder="you@practice.com" required aria-describedby="email-error" aria-invalid={state.errors?.getFieldErrors("email").length ? true : undefined} />
+          <input id="email" name="email" type="email" autoComplete="email" placeholder="you@email.com" required aria-describedby="email-error" aria-invalid={state.errors?.getFieldErrors("email").length ? true : undefined} />
           <ValidationError id="email-error" role="alert" prefix="E-mail" field="email" errors={state.errors} className="form-error" />
         </div>
         <div className="form-field">
           <label htmlFor="phone">Phone number</label>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+91 98765 43210" required aria-describedby="phone-error" aria-invalid={state.errors?.getFieldErrors("phone").length ? true : undefined} />
+          <input id="phone" name="phone" type="tel" autoComplete="tel" required aria-describedby="phone-error" aria-invalid={state.errors?.getFieldErrors("phone").length ? true : undefined} />
           <ValidationError id="phone-error" role="alert" prefix="Phone number" field="phone" errors={state.errors} className="form-error" />
         </div>
         <div className="form-field">
