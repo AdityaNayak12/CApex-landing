@@ -1,5 +1,37 @@
 import Image from "next/image";
 import WaitlistForm from "../components/WaitlistForm";
+import { siteUrl } from "../lib/site";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "CApex",
+      url: siteUrl,
+      logo: `${siteUrl}/capex-logo-light.png`,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "CApex",
+      url: siteUrl,
+      inLanguage: "en-IN",
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "CApex",
+      url: siteUrl,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: "AI-powered statutory check engine for Indian Chartered Accountants. Imports Tally XML/XLSX exports, traces every transaction, and produces a ranked, explainable review queue.",
+      audience: { "@type": "BusinessAudience", audienceType: "Chartered Accountant firms in India" },
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+  ],
+};
 
 const steps = [
   ["01", "Import", "Bring in a Tally XML/XLSX export and keep the source batch intact."],
@@ -17,6 +49,7 @@ const capabilities = [
 export default function Page() {
   return (
     <main className="site-shell">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="site-header">
         <a className="brand" href="#top" aria-label="CApex home">
           <Image src="/capex-logo-light.png" alt="CApex" width={42} height={41} priority />
