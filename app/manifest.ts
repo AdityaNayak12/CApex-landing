@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "CApex — AI Audit Engine for Indian CA Firms",
-    short_name: "CApex",
+    name: "CAPEX — AI Audit Engine for Indian CA Firms",
+    short_name: "CAPEX",
     description: "AI-powered statutory check engine for Chartered Accountants.",
     start_url: "/",
     display: "standalone",

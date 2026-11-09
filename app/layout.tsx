@@ -7,14 +7,14 @@ import { siteUrl } from "../lib/site";
 const manrope = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-manrope", display: "swap" });
 const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex-mono", display: "swap" });
 
-const title = "CApex — AI Audit Engine for Indian CA Firms";
-const description = "CApex is an AI-powered statutory check engine for Chartered Accountants. Import Tally XML/XLSX exports, trace every transaction, and review ranked, explainable exceptions. Join the November 2026 pilot waitlist.";
+const title = "CAPEX — AI Audit Engine for Indian CA Firms";
+const description = "CAPEX is an AI-powered statutory check engine for Chartered Accountants. Import Tally XML/XLSX exports, trace every transaction, and review ranked, explainable exceptions. Join the November 2026 pilot waitlist.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: title, template: "%s | CApex" },
+  title: { default: title, template: "%s | CAPEX" },
   description,
-  applicationName: "CApex",
+  applicationName: "CAPEX",
   keywords: [
     "AI audit software India",
     "audit automation for CA firms",
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
     "ledger scrutiny",
     "general ledger analytics",
     "SA-mapped working papers",
-    "CApex",
+    "CAPEX",
   ],
-  authors: [{ name: "CApex" }],
-  creator: "CApex",
-  publisher: "CApex",
+  authors: [{ name: "CAPEX" }],
+  creator: "CAPEX",
+  publisher: "CAPEX",
   category: "Business Software",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "/",
-    siteName: "CApex",
+    siteName: "CAPEX",
     title,
     description,
     locale: "en_IN",
