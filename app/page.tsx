@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FlowSection from "../components/FlowSection";
+import SecuritySection from "../components/SecuritySection";
 import WaitlistForm from "../components/WaitlistForm";
 import { siteUrl } from "../lib/site";
 
@@ -45,6 +46,7 @@ export default function Page() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#how-it-works">How it works</a>
+          <a href="#security">Security</a>
           <a href="#principles">Our principle</a>
           <a href="#waitlist">Pilot</a>
         </nav>
@@ -69,6 +71,8 @@ export default function Page() {
       </section>
 
       <FlowSection />
+
+      <SecuritySection />
 
       <section className="principle" id="principles" aria-labelledby="principle-title">
         <div className="principle-engine">

@@ -382,9 +382,8 @@ h2 em {
 }
 
 .principle {
-  max-width: 1240px;
-  margin: auto;
-  padding: clamp(80px, 9vw, 128px) 32px;
+  padding: clamp(80px, 9vw, 128px) max(32px, calc((100vw - 1240px) / 2 + 32px));
+  border-top: 1px solid #eeeeee14;
   display: grid;
   grid-template-columns: minmax(300px, .9fr) 1.1fr;
   align-items: center;
@@ -973,6 +972,174 @@ h2 em {
   .flow-step {
     grid-template-columns: 1fr;
     padding-left: 40px;
+  }
+}
+
+/* Security: data privacy pillars with a live-looking Tally request log. */
+.security {
+  padding: clamp(96px, 11vw, 160px) max(32px, calc((100vw - 1240px) / 2 + 32px));
+  background: var(--slate);
+}
+
+.security-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 24px clamp(40px, 7vw, 112px);
+}
+
+.security-head .eyebrow {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.security-head h2 {
+  margin: 0;
+  font-size: clamp(40px, 5.6vw, 76px);
+}
+
+.security-head h2 em {
+  color: var(--teal);
+}
+
+.security-head > p:last-child {
+  max-width: 460px;
+  margin: 0;
+  color: var(--paper-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: clamp(56px, 7vw, 88px);
+}
+
+.security-card {
+  position: relative;
+  padding: 28px;
+  border: 1px solid #eeeeee17;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #eeeeee0a, #eeeeee03);
+  transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+
+.security-card:hover {
+  border-color: #76abae66;
+  box-shadow: 0 24px 48px -28px #76abae59;
+  transform: translateY(-3px);
+}
+
+.security-tag {
+  color: var(--teal);
+  font: 500 11px var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.security-card h3 {
+  margin: 18px 0 10px;
+  font-size: 21px;
+  letter-spacing: -.02em;
+}
+
+.security-card p {
+  margin: 0;
+  color: var(--paper-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.security-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 32px;
+  background:
+    radial-gradient(circle at 85% 50%, #76abae1f, transparent 60%),
+    linear-gradient(160deg, #eeeeee0d, #eeeeee03);
+}
+
+.security-feature h3 {
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.security-log {
+  padding: 14px;
+  border: 1px solid #eeeeee14;
+  border-radius: 12px;
+  background: #222831cc;
+  font: 11px var(--mono);
+}
+
+.security-log div {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  animation: security-ping 3s ease-in-out infinite;
+}
+
+.security-log span {
+  color: var(--paper-soft);
+}
+
+.security-log b {
+  font-weight: 500;
+  color: var(--paper-soft);
+  text-decoration: line-through;
+}
+
+.security-log em {
+  color: #f2a65a;
+  font-style: normal;
+}
+
+.security-log div[data-allowed] b {
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.security-log div[data-allowed] em {
+  color: var(--teal);
+}
+
+@keyframes security-ping {
+  0%, 22%, 100% { background: transparent; }
+  8% { background: #76abae1f; }
+}
+
+@media (max-width: 960px) {
+  .security-head,
+  .security-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .security-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .security-feature {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .security {
+    padding-inline: 16px;
+  }
+
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-feature {
+    grid-column: auto;
   }
 }
 
