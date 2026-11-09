@@ -218,7 +218,7 @@ p {
 h1,
 h2 {
   letter-spacing: -.075em;
-  line-height: .95;
+  line-height: 1.06; /* Manrope descenders collide below ~1.05 */
 }
 
 .hero h1 {
@@ -244,7 +244,7 @@ h2 {
   font-size: clamp(22px, 2.8vw, 40px);
   font-weight: 700;
   letter-spacing: -.055em;
-  line-height: 1.05;
+  line-height: 1.15;
   text-wrap: balance;
 }
 
@@ -305,7 +305,7 @@ h2 {
   font-size: 31px;
   font-weight: 700;
   letter-spacing: -.07em;
-  line-height: .98;
+  line-height: 1.15;
 }
 
 .card-rule {
@@ -572,7 +572,7 @@ h2 em {
 .footer-col a {
   color: var(--paper-muted);
   font-size: 14px;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .footer-bottom {
@@ -672,7 +672,8 @@ h2 em {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .footer-brand {
+  .footer-brand,
+  .footer-col:last-child {
     grid-column: 1 / -1;
   }
 
@@ -711,10 +712,11 @@ h2 em {
   margin: 0;
   font-size: clamp(40px, 6vw, 64px);
   letter-spacing: -.04em;
-  line-height: 1;
+  line-height: 1.1;
 }
 
-.legal-updated {
+/* .legal scope: otherwise `.legal p` overrides its size and margin */
+.legal .legal-updated {
   margin: 16px 0 48px;
   color: var(--paper-soft);
   font: 11px var(--mono);
