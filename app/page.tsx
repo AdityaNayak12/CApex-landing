@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FlowSection from "../components/FlowSection";
 import WaitlistForm from "../components/WaitlistForm";
 import { siteUrl } from "../lib/site";
 
@@ -32,19 +33,6 @@ const jsonLd = {
     },
   ],
 };
-
-const steps = [
-  ["01", "Import", "Bring in a Tally XML/XLSX export and keep the source batch intact."],
-  ["02", "Check", "Run explainable statutory checks across balances, movement, and continuity."],
-  ["03", "Review", "Work through a focused queue that keeps each exception in context."],
-  ["04", "Document", "Add your notes and preserve the decision trail for the file."],
-];
-
-const capabilities = [
-  "Trace every transaction, not only a sample",
-  "Rank exceptions by risk and money",
-  "Prepare SA-mapped working papers for pilot review",
-];
 
 export default function Page() {
   return (
@@ -80,56 +68,7 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="paired-sections section-wrap">
-      <section className="overview" aria-labelledby="overview-title">
-        <div className="overview-panel overview-lead">
-          <p className="eyebrow">For Chartered Accountants <span>•</span> In active development</p>
-          <h2 id="overview-title">A clearer way to scrutinise the <em>ledger.</em></h2>
-        </div>
-        <div className="overview-panel overview-detail">
-          <p className="overview-copy">In active development, CAPEX is being tested with Tally XML/XLSX exports to trace every transaction - not a sample into a ranked, explainable review queue. Surface unusual entries, negative balances, and suspense movement while your judgement stays with the work that matters.</p>
-          <p className="hero-note"><span className="status-dot" /> Statutory check engine live in testing</p>
-          <div className="hero-actions">
-            <a className="button button-accent" href="#waitlist">Join the pilot waitlist <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <div className="review-preview" aria-label="Illustrative pilot review queue">
-          <div className="review-preview-top"><span>CAPEX / pilot view</span><span>ILLUSTRATIVE</span></div>
-          <p>From ledger noise<br />to a focused review.</p>
-          <div className="review-preview-row"><span>01</span><strong>Mismatches</strong><span>Review</span></div>
-          <div className="review-preview-row"><span>02</span><strong>Duplicates</strong><span>Review</span></div>
-          <div className="review-preview-row"><span>03</span><strong>Backdated entries</strong><span>Review</span></div>
-          <div className="review-preview-bottom"><span>Checks surface exceptions</span><span>CA decides ↗</span></div>
-        </div>
-      </section>
-
-      <section className="process" id="how-it-works" aria-labelledby="process-title">
-        <div className="section-heading">
-          <p className="eyebrow">The workflow</p>
-          <h2 id="process-title">Make the first pass<br /><em>more deliberate.</em></h2>
-          <p>The statutory check engine is live in testing. Wider pilot capabilities are being validated to reduce the mechanical scan before review begins, with every step visible, traceable, and ready for a CA to assess.</p>
-        </div>
-        <div className="step-grid">
-          {steps.map(([number, title, copy]) => (
-            <article className="step" key={number}>
-              <span className="step-number">{number}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-            </article>
-          ))}
-        </div>
-        <div className="capability-panel">
-          <div>
-            <p className="eyebrow">What we are building</p>
-            <h3>A calmer review surface<br />for complex accounts.</h3>
-          </div>
-          <ul>
-            {capabilities.map((capability) => <li key={capability}><span aria-hidden="true">+</span>{capability}</li>)}
-          </ul>
-        </div>
-      </section>
-
-      </div>
+      <FlowSection />
 
       <section className="principle" id="principles" aria-labelledby="principle-title">
         <div className="principle-engine">
