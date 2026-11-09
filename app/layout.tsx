@@ -1,6 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import "./globals.css";
+import Loader from "../components/Loader";
 import { siteUrl } from "../lib/site";
+
+const manrope = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-manrope", display: "swap" });
+const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex-mono", display: "swap" });
 
 const title = "CApex — AI Audit Engine for Indian CA Firms";
 const description = "CApex is an AI-powered statutory check engine for Chartered Accountants. Import Tally XML/XLSX exports, trace every transaction, and review ranked, explainable exceptions. Join the November 2026 pilot waitlist.";
@@ -46,5 +51,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#222831" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-IN"><body>{children}</body></html>;
+  return <html lang="en-IN" className={`${manrope.variable} ${plexMono.variable}`}><body><Loader />{children}</body></html>;
 }
