@@ -8,21 +8,21 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      name: "CApex",
+      name: "CAPEX",
       url: siteUrl,
       logo: `${siteUrl}/capex-logo-light.png`,
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "CApex",
+      name: "CAPEX",
       url: siteUrl,
       inLanguage: "en-IN",
       publisher: { "@id": `${siteUrl}/#organization` },
     },
     {
       "@type": "SoftwareApplication",
-      name: "CApex",
+      name: "CAPEX",
       url: siteUrl,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
@@ -51,8 +51,8 @@ export default function Page() {
     <main className="site-shell">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="CApex home">
-          <Image src="/capex-logo-light.png" alt="CApex" width={42} height={41} priority />
+        <a className="brand" href="#top" aria-label="CAPEX home">
+          <Image src="/capex-logo-light.png" alt="CAPEX" width={42} height={41} priority />
           <span>CAPEX</span>
         </a>
         <nav aria-label="Main navigation">
@@ -87,14 +87,14 @@ export default function Page() {
           <h2 id="overview-title">A clearer way to scrutinise the <em>ledger.</em></h2>
         </div>
         <div className="overview-panel overview-detail">
-          <p className="overview-copy">In active development, CApex is being tested with Tally XML/XLSX exports to trace every transaction - not a sample into a ranked, explainable review queue. Surface unusual entries, negative balances, and suspense movement while your judgement stays with the work that matters.</p>
+          <p className="overview-copy">In active development, CAPEX is being tested with Tally XML/XLSX exports to trace every transaction - not a sample into a ranked, explainable review queue. Surface unusual entries, negative balances, and suspense movement while your judgement stays with the work that matters.</p>
           <p className="hero-note"><span className="status-dot" /> Statutory check engine live in testing</p>
           <div className="hero-actions">
             <a className="button button-accent" href="#waitlist">Join the pilot waitlist <span aria-hidden="true">↗</span></a>
           </div>
         </div>
         <div className="review-preview" aria-label="Illustrative pilot review queue">
-          <div className="review-preview-top"><span>CApex / pilot view</span><span>ILLUSTRATIVE</span></div>
+          <div className="review-preview-top"><span>CAPEX / pilot view</span><span>ILLUSTRATIVE</span></div>
           <p>From ledger noise<br />to a focused review.</p>
           <div className="review-preview-row"><span>01</span><strong>Mismatches</strong><span>Review</span></div>
           <div className="review-preview-row"><span>02</span><strong>Duplicates</strong><span>Review</span></div>
@@ -133,7 +133,7 @@ export default function Page() {
 
       <section className="principle" id="principles" aria-labelledby="principle-title">
         <div className="principle-engine">
-          <article className="engine-card" aria-label="CApex statutory check engine status">
+          <article className="engine-card" aria-label="CAPEX statutory check engine status">
             <div className="card-top">
               <span>STATUTORY CHECK ENGINE</span>
               <span className="card-tag">TESTING</span>
@@ -142,13 +142,13 @@ export default function Page() {
             <div className="card-rule"><span>01</span><span>Balance continuity</span><b>Ready</b></div>
             <div className="card-rule"><span>02</span><span>Material movement</span><b>Ready</b></div>
             <div className="card-rule"><span>03</span><span>Exception context</span><b>Ready</b></div>
-            <div className="card-foot"><span>CApex / pilot build</span><span>→</span></div>
+            <div className="card-foot"><span>CAPEX / pilot build</span><span>→</span></div>
           </article>
         </div>
         <div className="principle-copy-block">
           <p className="eyebrow">The responsibility statement</p>
           <h2 id="principle-title">The tool flags.<br /><em>The CA decides.</em></h2>
-          <p className="principle-copy">Capex is being built to surface patterns, exceptions, and missing context. It does not replace professional judgement, sign-off, or the responsibility of the Chartered Accountant.</p>
+          <p className="principle-copy">CAPEX is being built to surface patterns, exceptions, and missing context. It does not replace professional judgement, sign-off, or the responsibility of the Chartered Accountant.</p>
         </div>
       </section>
 
@@ -163,7 +163,7 @@ export default function Page() {
       </section>
 
       <footer className="site-footer">
-        <a className="brand" href="#top" aria-label="CApex home">
+        <a className="brand" href="#top" aria-label="CAPEX home">
           <Image src="/capex-logo-light.png" alt="" width={34} height={33} />
           <span>CAPEX</span>
         </a>

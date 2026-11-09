@@ -62,7 +62,7 @@ export default function WaitlistForm() {
       <button className="button form-submit" type="submit" disabled={state.submitting}>
         {state.submitting ? "Sending…" : "Request pilot details"} <span aria-hidden="true">↗</span>
       </button>
-      <p className="form-note">We’ll only use these details to follow up about the CApex pilot.</p>
+      <p className="form-note">We’ll only use these details to follow up about the CAPEX pilot.</p>
     </form>
   );
 }
