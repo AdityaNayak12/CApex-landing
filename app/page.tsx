@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FlowSection from "../components/FlowSection";
 import SecuritySection from "../components/SecuritySection";
+import SiteFooter from "../components/SiteFooter";
 import WaitlistForm from "../components/WaitlistForm";
 import { siteUrl } from "../lib/site";
 
@@ -108,13 +109,7 @@ export default function Page() {
         <WaitlistForm />
       </section>
 
-      <footer className="site-footer">
-        <a className="brand" href="#top" aria-label="CAPEX home">
-          <Image src="/capex-logo-light.png" alt="" width={34} height={33} />
-          <span>CAPEX</span>
-        </a>
-        <p>Built for modern audit teams.</p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
