@@ -13,7 +13,7 @@ const pillars = [
   ["Each firm is sealed off", "Data is isolated per organisation. A request for another firm's engagement, evidence or pack returns nothing."],
   ["Access follows the engagement team", "Admin, partner, manager, preparer and client roles. Sign-off and pack issue stay partner-only."],
   ["A trail you can defend", "Every import is SHA-256 fingerprinted with its parser version. Locked audit packs carry a hashed manifest of their contents."],
-  ["Hardened sign-in", "Passwords are stored as bcrypt hashes, with lockout on repeated failures and no hint of which emails have accounts."],
+  ["Evidence is never overwritten", "Every client upload is kept as an immutable version. A resubmission adds a new one beside it, and the activity log never copies document contents or credentials."],
 ];
 
 export default function SecuritySection() {
