@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import ContactLinks from "./ContactLinks";
 
 export const contactEmail = "capexxai@gmail.com";
 
 const columns: [string, [string, string][]][] = [
   ["Product", [["How it works", "/#how-it-works"], ["Security", "/#security"], ["Our principle", "/#principles"], ["Join the pilot", "/#waitlist"]]],
   ["Legal", [["Privacy policy", "/privacy"], ["Terms of use", "/terms"]]],
-  ["Contact", [[contactEmail, `mailto:${contactEmail}`]]],
 ];
 
 export default function SiteFooter() {
@@ -28,6 +28,7 @@ export default function SiteFooter() {
             </ul>
           </nav>
         ))}
+        <ContactLinks email={contactEmail} />
       </div>
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} CAPEX. All rights reserved.</p>
