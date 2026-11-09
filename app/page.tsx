@@ -70,6 +70,11 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="backers" aria-label="Backed by">
+        <p>Backed by</p>
+        <Image src="/scaler-innovation-lab.png" alt="Scaler Innovation Lab" width={518} height={331} />
+      </section>
+
       <FlowSection />
 
       <SecuritySection />
@@ -79,7 +84,6 @@ export default function Page() {
           <article className="engine-card" aria-label="CAPEX statutory check engine status">
             <div className="card-top">
               <span>STATUTORY CHECK ENGINE</span>
-              <span className="card-tag">TESTING</span>
             </div>
             <h3 className="card-title">From raw data<br />to reviewable signal.</h3>
             <div className="card-rule"><span>01</span><span>Balance continuity</span><b>Ready</b></div>
@@ -100,7 +104,6 @@ export default function Page() {
           <p className="eyebrow">Pilot programme <span>•</span> November 2026</p>
           <h2 id="waitlist-title">Help shape the<br /><em>review layer.</em></h2>
           <p>We are preparing a small group of CA practices for pilots beginning November 2026. Leave your details and we will share the pilot scope as it takes shape.</p>
-          <p className="waitlist-status"><span className="status-dot" /> Currently in active development</p>
         </div>
         <WaitlistForm />
       </section>

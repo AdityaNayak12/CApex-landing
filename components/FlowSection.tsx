@@ -91,12 +91,11 @@ export default function FlowSection() {
   return (
     <section className="flow" id="how-it-works" aria-labelledby="flow-title">
       <div className="flow-head">
-        <p className="eyebrow">For Chartered Accountants <span>•</span> In active development</p>
+        <p className="eyebrow">For Chartered Accountants</p>
         <h2 id="flow-title">From accounting file<br /><em>to a locked audit pack.</em></h2>
         <p className="flow-intro">CAPEX takes a Tally or GL export through ten traceable stages. Every transaction is checked, not a sample, and the result is a ranked, explainable review queue. Your judgement stays with the work that matters.</p>
         <div className="flow-cta">
           <a className="button button-accent" href="#waitlist">Join the pilot waitlist <span aria-hidden="true">↗</span></a>
-          <p className="hero-note"><span className="status-dot" /> Statutory check engine live in testing</p>
         </div>
       </div>
 
