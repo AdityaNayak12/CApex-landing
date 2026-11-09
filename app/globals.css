@@ -382,9 +382,8 @@ h2 em {
 }
 
 .principle {
-  max-width: 1240px;
-  margin: auto;
-  padding: clamp(80px, 9vw, 128px) 32px;
+  padding: clamp(80px, 9vw, 128px) max(32px, calc((100vw - 1240px) / 2 + 32px));
+  border-top: 1px solid #eeeeee14;
   display: grid;
   grid-template-columns: minmax(300px, .9fr) 1.1fr;
   align-items: center;
