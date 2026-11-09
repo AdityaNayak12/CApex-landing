@@ -269,6 +269,11 @@ h2 {
   color: var(--charcoal);
 }
 
+/* Default arrow is teal, which vanishes on the teal fill and leaves the label off-center. */
+.button-accent span {
+  color: var(--charcoal);
+}
+
 .hero-note,
 .waitlist-status {
   display: flex;
